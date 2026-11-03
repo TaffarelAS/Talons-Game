@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/src/css/style.css">
+</head>
+<body>
+    <div id="menu-aqui"></div>
+
+    <div class="content">
+        <article>
+            <div class="login">
+                <form action="#" id="form-login" novalidate>
+                    <label for="email-login">Email</label>
+                    <input type="email" name="email" id="email-login" placeholder="email@email.com" minlength="3" required>
+
+                    <label for="senha-login">Senha</label>
+                    <input type="password" name="senha" id="senha-login" placeholder="Insira a Senha" minlength="6" required>
+
+                    <button type="submit" class="log-btn">Fazer Login</button>
+                </form>
+            </div>
+            <div class="cadastro">
+                <form action="#" id="form-cadastro" novalidate>
+                    <label for="nome-cadastro">Nome</label>
+                    <input type="text" name="nome" id="nome-cadastro" placeholder="Insira seu nome aqui" minlength="3" required>
+
+                    <label for="email-cadastro">Email</label>
+                    <input type="email" name="email" id="email-cadastro" placeholder="email@email.com" minlength="3" required>
+
+                    <label for="senha-cadastro">Senha</label>
+                    <input type="password" name="senha" id="senha-cadastro" placeholder="Minimo 6 caracteres" minlength="6" required>
+
+                    <label for="confirme-cadastro">Confirme a Senha</label>
+                    <input type="password" name="confirme" id="confirme-cadastro" placeholder="Confirme a senha" minlength="6" required>
+
+                    <button type="submit" class="cad-btn">Criar Conta</button>
+                    <p class="mensagem" id="confirma-cadastro"></p>
+                </form>
+            </div>
+        </article>
+    </div>
+
+    <div id="footer-aqui"></div>
+    <script src="/src/js/logcad.js"></script>
+    <script src="/src/js/layout.js"></script> <!-- PRECISA ESTAR POR ULTIMO PARA A ARVORE DOM RODAR -->    
+</body>
+</html>
