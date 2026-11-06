@@ -11,7 +11,12 @@ const headerSite = `
 
 const footerSite = `
     <footer>
-        <p>bub</p>
+        <div> 
+            <p>Ferramentas de Administrador</p>
+            <a href="users.html">Administrar Usuarios </a>
+            <a href="items.html">Administrar Items </a> 
+        </div>
+        
     </footer>
 `
 

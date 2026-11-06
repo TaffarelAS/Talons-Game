@@ -23,7 +23,7 @@
                 </form>
             </div>
             <div class="cadastro">
-                <form action="#" id="form-cadastro" novalidate>
+                <form onsubmit="criarConta(); return false;" id="form-cadastro">
                     <label for="nome-cadastro">Nome</label>
                     <input type="text" name="nome" id="nome-cadastro" placeholder="Insira seu nome aqui" minlength="3" required>
 
@@ -37,7 +37,7 @@
                     <input type="password" name="confirme" id="confirme-cadastro" placeholder="Confirme a senha" minlength="6" required>
 
                     <button type="submit" class="cad-btn">Criar Conta</button>
-                    <p class="mensagem" id="confirma-cadastro"></p>
+                    
                 </form>
             </div>
         </article>
