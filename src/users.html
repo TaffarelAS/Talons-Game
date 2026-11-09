@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>admin-users</title>
+    <link rel="stylesheet" href="/src/css/adm.css">
 </head>
 <body>
     <div class="voltar">
-        <img src="" alt="voltar">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px" fill="#1f1f1f" id="voltar-botão" onclick=""><path d="M7.83,13l5.6,5.6L12,20L4,12l8-8l1.43,1.4L7.83,11H20v2H7.83Z"/></svg>
     </div>
     <div class="gerenciar-usuarios">
         <table>
@@ -26,7 +27,7 @@
                 <td class="excluir">xdfxdf</td>
             </tr>
         </table>
-        <button>Adicionar Usuario</button>
+        <button onclick="addUser()">Adicionar Usuario</button>
     </div>
 </body>
 </html>

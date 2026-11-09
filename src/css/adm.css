@@ -1,0 +1,49 @@
+/*
+    Variaveis -> https://coolors.co/palette/394053-4e4a59-6e6362-839073-7cae7a <---- Paleta utilizada
+*/
+
+:root {
+    --tabela-primario: #83c9f4;
+    --tabela-secundario: #6F73D2;
+    --fundo: #7681B3;
+    --fundo-tabela: #EADEDA;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--fundo);
+}
+
+.voltar {
+    position: absolute;
+    margin-right: 90vw;
+    cursor: pointer;
+}
+
+.gerenciar-usuarios table {
+    border: solid, 2px;
+    border-color: var(--tabela-secundario);
+    background-color: var(--fundo-tabela);
+}
+
+.gerenciar-usuarios table tr {
+    background-color: var(--tabela-primario);
+}
+
+.gerenciar-usuarios table th {
+    border: solid, 1px;
+    color: var(--fundo-tabela);
+    background-color: var(--tabela-secundario);
+}
+
+.gerenciar-usuarios table td {
+    border: solid, 1px;
+}
