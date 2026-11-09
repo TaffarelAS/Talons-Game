@@ -12,7 +12,7 @@
     <div class="content">
         <article>
             <div class="login">
-                <form action="#" id="form-login" novalidate>
+                <form onsubmit="login(); return false" id="form-login">
                     <label for="email-login">Email</label>
                     <input type="email" name="email" id="email-login" placeholder="email@email.com" minlength="3" required>
 
