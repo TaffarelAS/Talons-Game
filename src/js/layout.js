@@ -15,7 +15,7 @@ const footerSite = `
             <a href="https://www.youtube.com/watch?v=zpdrkWX69vg"><img src="/public/instagram.png" alt="Instagram"></a>
             <a href="https://www.youtube.com/watch?v=30O4NgfgSP0"><img src="/public/youtube.png" alt="Youtube"></a>
             <a href="https://www.youtube.com/watch?v=sdV-PacdYdY"><img src="/public/twitter.png" alt="Twitter"></a>
-            <a href="https://taffarelas.itch.io/"><img src="https://static.itch.io/images/itchio-textless-black.svg" alt="Itch.io"></a>
+            <a href="https://taffarelas.itch.io/"><img src="/public/itchio.png" alt="Itch.io"></a>
             <a href="https://steamcommunity.com/id/taffarel404/"><img src="/public/steam.png" alt="Steam"></a>
         </div>
     
