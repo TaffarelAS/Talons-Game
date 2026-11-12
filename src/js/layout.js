@@ -31,10 +31,10 @@ const footerSite = `
 function montarLayout() {
     const headerEl = document.getElementById('menu-aqui');
     const footerEl = document.getElementById('footer-aqui');
-
+    
+    checarAdmin();
     if (headerEl) headerEl.innerHTML = headerSite;
     if (footerEl) footerEl.innerHTML = footerSite;
-    checarAdmin();
 }
 
 function checarAdmin() {
