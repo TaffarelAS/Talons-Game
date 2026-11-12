@@ -1,36 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>admin-users</title>
     <link rel="stylesheet" href="/src/css/adm.css">
 </head>
+
 <body>
     <div class="voltar">
-        <img src="" alt="voltar">
+        <svg onclick="location.href = '/src/home.html'" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px" fill="#000000"><path d="M7.83,13l5.6,5.6L12,20L4,12l8-8l1.43,1.4L7.83,11H20v2H7.83Z"/></svg>
     </div>
-    <div class="editar-user">
+    <div id="editar-user">
+        <div class="editar-modal">
+            <form onsubmit="salvarEdicao(); return false;" id="form-edit">
+                <label for="nome-edit">Nome</label>
+                <input type="text" name="nome" id="nome-edit" placeholder="Insira seu nome aqui" minlength="3" required>
 
+                <label for="email-edit">Email</label>
+                <input type="email" name="email" id="email-edit" placeholder="email@email.com" minlength="3" required>
+
+                <label for="senha-edit">Senha</label>
+                <input type="password" name="senha" id="senha-edit" placeholder="Minimo 6 caracteres" minlength="6"
+                    required>
+
+                <label for="confirme-edit">Confirme a Senha</label>
+                <input type="password" name="confirme" id="confirme-edit" placeholder="Confirme a senha" minlength="6"
+                    required>
+
+                <button type="submit" class="edit-btn">Confirmar Edição</button>
+                <button type="button" class="close-btn" onclick="fecharModal()">Cancelar</button>
+
+            </form>
+        </div>
     </div>
-    <div class="adicionar user">
-        
+    <div id="adicionar-user">
+        <div class="cadastro-modal">
+            <form onsubmit="criarConta(); return false; " id="form-cadastro">
+                <label for="nome-cadastro">Nome</label>
+                <input type="text" name="nome" id="nome-cadastro" placeholder="Insira o nome aqui" minlength="3" required>
+
+                <label for="email-cadastro">Email</label>
+                <input type="email" name="email" id="email-cadastro" placeholder="email@email.com" minlength="3" required>
+
+                <label for="senha-cadastro">Senha</label>
+                <input type="password" name="senha" id="senha-cadastro" placeholder="Minimo 6 caracteres" minlength="6"
+                    required>
+
+                <label for="confirme-cadastro">Confirme a Senha</label>
+                <input type="password" name="confirme" id="confirme-cadastro" placeholder="Confirme a senha" minlength="6"
+                    required>
+
+                <button type="submit" class="cad-btn">Criar Conta</button>
+                <button type="button" class="close-btn" onclick="fecharModal()">Cancelar</button>
+
+            </form>
+        </div>    
     </div>
+    
     <div class="gerenciar-usuarios">
-        <table>
-            <thead id="tabela-usuarios">
+        <table id="tabela-usuarios">
+            <thead>
                 <tr>
-                    <th>Nome</th>
-                    <th>Email</th>
-                    <th>Senha</th>
-                    <th>Editar</th>
-                    <th>Excluir</th>
-                </tr>    
+                    <th>NOME</th>
+                    <th>EMAIL</th>
+                    <th>SENHA</th>
+                    <th>EDITAR</th>
+                    <th>EXCLUIR</th>
+                </tr>
             </thead>
             <tbody id="corpo-tabela">
             </tbody>
         </table>
-        <button id="btn-novo-user">Adicionar Usuario</button>
+        <button id="btn-novo-user" onclick="novoUsuario()">Adicionar Usuario</button>
     </div>
+
+    <script src="/src/js/users.js"></script>
+    <script src="/src/js/layout.js"></script>
 </body>
+
 </html>

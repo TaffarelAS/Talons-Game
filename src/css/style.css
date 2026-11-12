@@ -226,4 +226,13 @@ footer {
 
 #adm {
     display: none;
+    flex-direction: column;
+    background-color: var(--cor-escuro);
+    padding: 10px;
+    border: 2px solid var(--cor-menu);
+    border-radius: 10px;
+
+    p {
+        color: var(--play);
+    }
 }

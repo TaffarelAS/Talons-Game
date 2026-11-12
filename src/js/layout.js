@@ -32,9 +32,10 @@ function montarLayout() {
     const headerEl = document.getElementById('menu-aqui');
     const footerEl = document.getElementById('footer-aqui');
     
-    checarAdmin();
+    
     if (headerEl) headerEl.innerHTML = headerSite;
     if (footerEl) footerEl.innerHTML = footerSite;
+    checarAdmin();
 }
 
 function checarAdmin() {
@@ -42,7 +43,7 @@ function checarAdmin() {
     const adm = document.getElementById('adm');
 
     if (adm && tipo === 'admin') {
-        adm.style.display = 'block';
+        adm.style.display = 'flex';
     }
 };
 

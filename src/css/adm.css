@@ -1,12 +1,16 @@
 /*
-    Variaveis -> https://coolors.co/palette/394053-4e4a59-6e6362-839073-7cae7a <---- Paleta utilizada
+    Variaveis -> https://coolors.co/palette/394053-4e4a59-6e6362-839073-7cae7a <---- Paleta utilizada para maioria das cores
 */
 
 :root {
     --tabela-primario: #83c9f4;
     --tabela-secundario: #6F73D2;
-    --fundo: #7681B3;
-    --fundo-tabela: #EADEDA;
+    --tabela-terciario: #6369D1;
+    --fundo: #EFE9F4;
+    --fundo2: #ffffffcc;
+    --fundo-tabela: #BFDBF7;
+    --shadow: #0000001a;
+    --esconder-fundo: #00000080;
 }
 
 * {
@@ -18,32 +22,145 @@
 body {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     background-color: var(--fundo);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 25px;
+    background-color: var(--fundo2); /* branco levemente translúcido */
+    border-radius: 15px;
+    overflow: hidden;            /* respeita o border-radius nas células */
+    box-shadow: 0 4px 8px var(--shadow);
+}
+
+table th,
+table td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--fundo);
+}
+
+table th {
+    background-color: var(--tabela-secundario);
+    color: #fff;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+.gerenciar-usuarios {
+    background-color: var(--fundo-tabela);
+    padding: 50px;
+    border-radius: 20px;
+    border:  solid var(--tabela-secundario);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 8px var(--shadow);
+    margin-top: 12.5vh;
+    width: 100%;
+    max-width: 900px;
 }
 
 .voltar {
     position: absolute;
-    margin-right: 90vw;
+    top: 20px;
+    left: 20px;
     cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
 }
 
-.gerenciar-usuarios table {
-    border: solid, 2px;
-    border-color: var(--tabela-secundario);
+.editar-modal-modal,
+.cadastro-modal-modal {
     background-color: var(--fundo-tabela);
+    padding: 30px 40px;
+    border-radius: 20px;
+    border: solid var(--tabela-secundario);
+    box-shadow: 0 4px 8px var(--shadow);
+    width: 100%;
+    max-width: 400px;
 }
 
-.gerenciar-usuarios table tr {
-    background-color: var(--tabela-primario);
+.editar-modal form,
+.cadastro-modal form {
+    background-color: var(--fundo-tabela);
+    padding: 15px;
+    border: solid var(--tabela-secundario);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
-.gerenciar-usuarios table th {
-    border: solid, 1px;
-    color: var(--fundo-tabela);
+.editar-modal label,
+.cadastro-modal label {
+    font-size: 0.9rem;
+    margin-top: 6px;
+}
+
+.editar-modal input,
+.cadastro-modal input {
+    padding: 12px;
+    border: 1px solid var(--tabela-secundario);
+    border-radius: 15px;
+    font-size: 1rem;
+    background-color: var(--fundo);
+}
+
+.edit-btn,
+.cad-btn,
+.close-btn {
+    margin-top: 15px;
+    padding: 15px;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px var(--shadow);
+    cursor: pointer;
+    background-color: var(--tabela-secundario);
+    box-shadow: none;
+}
+
+.edit-btn,
+.cad-btn {
     background-color: var(--tabela-secundario);
 }
 
-.gerenciar-usuarios table td {
-    border: solid, 1px;
+.edit-btn:hover,
+.cad-btn:hover,
+.close-btn:hover {
+    background-color: var(--tabela-terciario);
+}
+
+#editar-user,
+#adicionar-user {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: var(--esconder-fundo);
+    z-index: 10;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#btn-novo-user {
+    border: none;
+    background-color: var(--tabela-secundario);
+    padding: 15px;
+    width: 200px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px var(--shadow);
+    cursor: pointer;
+}
+
+#btn-novo-user:hover {
+    background-color: var(--tabela-terciario);
+}
+
+#editar-svg,
+#deletar-svg {
+    cursor: pointer;
 }
