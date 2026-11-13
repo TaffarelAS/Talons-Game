@@ -11,13 +11,17 @@
 :root {
     --cor-primaria: #839073;
     --cor-secundaria: #7CAE7A;
+    --cor-terciaria: #476d46;
+    --cor-secundaria-inv: #7cae7a59;
     --cor-escuro: #394053;
     --cor-menu: #6e6362;
     --cor-footer: #4e4a59;
     --invisivel: #00000000;
     --invisivel2: #305050bf;
     --fonte: #f5f5f5;
+    --fonte2: #f5f5f58e;
     --play: #ffc72c;
+    --play2: #ac8d3a;
     --shadow: #0000001a;
 }
 
@@ -35,21 +39,26 @@
     font-style: normal;
     text-decoration: none;
     color: var(--fonte);
+    box-sizing: border-box;
 }
 
 body {
     background-image: url(/public/background.png);
+    background-size: cover;
+    background-attachment: fixed;
     
 }
 
 .content {
     min-height: 100vh; /* para o conteudo pegar a tela inteira certificando que footer e menu fiquem em seus devidos lugares não importa o tamanho da tela*/
     margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 article {
     background-color: var(--invisivel);
-    height: 82.6vh;
+    flex: 1;
     padding: 2vh;
     display: flex;
     margin-left: 10vw;
@@ -66,11 +75,21 @@ article aside {
     height: 100%;
     width: 40vw;
     margin-right: 1vw;
+    border: solid 5px var(--cor-secundaria-inv);
     border-radius: 10px;
-    box-shadow: 0 4px 8px var(--shadow);
+    box-shadow: 0px 4px 8px var(--shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+        padding: 25px;
+        text-align: center;
+    }
 
     p {
-        padding: 50px;
+        padding: 25px;
+        font-size: 3vh;
     }
 }
 
@@ -78,38 +97,77 @@ article aside {
     height: 100%;
     display: flex;
     flex-direction: column;
+    flex: 1;
 
 }
 
 article .sides {   
     display: flex;
-    height: 50%;
+    height: auto;
+    border-radius: 10px;
+
+    a {
+        color: var(--play);
+        background-color:var(--cor-escuro);
+        padding: 5px;
+        border-radius: 10px;
+    }
+
+    a:hover{
+        color: var(--play2);
+    }
 
     section {
         background-color: var(--invisivel2);
-        width: 25vw; 
+        flex: 1; 
         border-radius: 10px;
         box-shadow: 0 4px 8px var(--shadow);
 
     }
-    #side2{
-            margin-left: 4vh;
+    #side1 {
+        border: solid 5px var(--cor-secundaria-inv);
+    }
+    #side2 {
+            margin-left: 1.5vw;
+            border: solid 5px var(--cor-secundaria-inv);
+    }
+
+    h2 {
+        padding: 25px;
     }
 
     p {
-        padding: 50px;
+        font-size: 3vh;
+        padding: 25px;
     }
 }
 
 article .bottom {
     background-color: var(--invisivel2);
-    margin-top: 5vh;
-    height: 50%;
+    margin-top: 2vh;
+    min-height: 35vh;
+    border: solid 5px var(--cor-secundaria-inv);
     border-radius: 10px;
     box-shadow: 0 4px 8px var();
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2vh;
+
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    img {
+        height: 10vh;
+        width: auto;
+    }
 
     p {
-        padding: 50px;
+        font-size: 3vh;
     }
 }
 
@@ -119,9 +177,21 @@ article .bottom {
 
     .sobre {
         background-color: var(--invisivel2);
+        border: solid 5px var(--cor-secundaria-inv);
+        border-radius: 10px;
+        padding: 20px;
 
         p {
-            padding: 50px;
+            padding: 30px;
+            font-size: 3vh;
+        }
+
+        a {
+            color: var(--play);
+        }
+
+        a:hover {
+            color: var(--play2);
         }
     }
 
@@ -131,34 +201,38 @@ article .bottom {
 
 .login, .cadastro {
     background-color: var(--invisivel2);
-    width: 30vw;
+    width: min(90%, 500px); 
     padding: 50px;
+    border: solid 5px var(--cor-secundaria-inv);
     border-radius: 10px;
     box-shadow: 0 4px 8px var(--shadow);
+    margin: 2vh 2vh auto;
 
     form {
         display: flex;
         flex-direction: column;
-        flex-wrap: wrap;
         align-items: center;
+        width: 100%;
     }
 
     label {
-        font-size: 40px;
+        font-size: 3.8vh;
     }
 
     input {
-        font-size: 40px;
+        font-size: 3.8vh;
         color: var(--cor-escuro);
         border: none;
         accent-color: var(--cor-secundaria);
         height: 40px;
+        width: 100%;
         border-radius: 5px;
         box-shadow: 0 4px 8px var(--shadow);
+        padding: 0 8px;
     }
 
     button {
-        font-size: 20px;
+        font-size: 1.1rem;
         background-color: var(--cor-secundaria);
         border: none;
         border-radius: 5px;
@@ -168,7 +242,44 @@ article .bottom {
         height: 40px;
         width: 100px;
     }
+
+    button:hover{
+        background-color: var(--cor-terciaria);
+    }
 }
+
+/*
+    Roadmap
+*/
+
+    #roadmap {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        min-height: 150vh;
+        padding: 4vh 2vw;
+
+        .road {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--invisivel2);
+            min-height: 10vh;
+            width: 50%;
+            padding: 15px;
+            border: solid 5px var(--cor-secundaria-inv);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px var(--shadow);
+            font-size: 3vh;
+
+            img {
+                height: 10vh;
+            }
+        }
+
+    }
 
 /*
     Header e Footer
@@ -179,13 +290,16 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2vh;
-    padding-left: 10vw;
-    padding-right: 10vw;
+    flex-wrap: wrap;
+    padding: 2vh 10vw;
     box-shadow: 0 4px 8px var(--shadow);
 
     a {
         font-size: 32px;
+    }
+
+    a:hover {
+        color: var(--fonte2);
     }
 
     #Play {
@@ -195,30 +309,34 @@ header {
         border-radius: 10px;
         box-shadow: 0 4px 8px var(--shadow);
     }
+
+    #Play:hover{
+        color: var(--play2);
+    }
 }
 
 footer {
     background-color: var(--cor-footer);
     display: flex;
-
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     gap: 100px;
-    height: 100px;
-    padding-left: 10vh;
-    padding-right: 10vh; 
+    min-height: 100px;
+    padding: 2vh 5vw;
     box-shadow: 0 4px 8px var(--shadow);
 
 }
 
 .redes {
-    width: 20vw;
+    width: 60%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
 
     img {
-        width: 2vw;
+        width: 40px;
         box-shadow: 0 4px 8px var(--shadow);
     }
 
@@ -233,6 +351,105 @@ footer {
     border-radius: 10px;
 
     p {
+        color: var(--fonte);
+    }
+
+    a {
         color: var(--play);
+    }
+
+    a:hover {
+        color: var(--play2);
+    }
+
+}
+
+/* 
+    TABLET 
+*/
+@media (max-width: 1024px) {
+    article {
+        margin-left: 4vw;
+        margin-right: 4vw;
+        flex-direction: column;
+        height: auto;
+    }
+    article aside {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 2vh;
+    }
+    article .sides {
+         flex-direction: column; 
+        }
+
+    header, footer { 
+        padding: 2vh 4vw; 
+    }
+
+    .redes { 
+        width: 50%; 
+    }
+}
+
+/* 
+    MOBILE 
+*/
+@media (max-width: 768px) {
+
+    article {
+        margin-left: 2vw;
+        margin-right: 2vw;
+        padding: 1vh;
+    }
+
+    article aside h1 { 
+        padding: 15px; 
+    }
+
+    article aside p  { 
+        padding: 15px; 
+    }
+
+    article .sides { 
+        padding: 1vh; 
+    }
+
+    article .sides h2 { 
+        padding: 15px; 
+    }
+
+    article .sides p  { 
+        padding: 15px; 
+    }
+
+    header {
+        flex-direction: column;
+        gap: 0.8rem;
+        padding: 2vh;
+        text-align: center;
+    }
+    header a { font-size: 1.2rem; }
+
+    footer {
+        flex-direction: column;
+        padding: 2vh;
+        height: auto;
+    }
+    .redes { 
+        width: 70%; 
+        justify-content: center; 
+    }
+
+    #roadmap .road {
+        width: 95%;
+        padding: 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .login, .cadastro { 
+        width: 95%; 
+        padding: 20px; 
     }
 }

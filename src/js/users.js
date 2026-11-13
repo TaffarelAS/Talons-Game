@@ -139,4 +139,23 @@ function criarConta() {
 
 }
 
+function criarAdmin() {
+  let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+  const adminExist = usuarios.some(
+    (u) => u.email.toLowerCase() === "admin@admin.com"
+  );
+
+  if (!adminExist) {
+    usuarios.push({
+      email: "admin@admin.com",
+      senha: "admin1",
+      nome: "Administrador"
+    });
+    localStorage.setItem("usuarios", JSON.stringify(usuarios));
+  }
+}
+
+criarAdmin();
+
 document.addEventListener('DOMContentLoaded', renderizarTabela);
