@@ -3,7 +3,7 @@ const headerSite = `
         <a href="home.html"><img src="/public/Talons.png" alt="Talons"></a>
         <a href="about.html">About</a>
         <a href="roadmap.html">Roadmap</a>
-        <a href="play.html" id="Play">Play</a>
+        <a href="https://steamcommunity.com/id/taffarel404/" id="Play">Play</a>
         <a href="login.html">Login</a>
     </header>
 `
@@ -22,7 +22,6 @@ const footerSite = `
         <div id="adm"> 
             <p>Ferramentas de Administrador</p>
             <a href="users.html">Administrar Usuarios </a>
-            <a href="items.html">Administrar Items </a> 
         </div>
         
     </footer>
@@ -48,3 +47,22 @@ function checarAdmin() {
 };
 
 montarLayout();
+
+function criarAdmin() {
+  let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+  const adminExist = usuarios.some(
+    (u) => u.email.toLowerCase() === "admin@admin.com"
+  );
+
+  if (!adminExist) {
+    usuarios.push({
+      email: "admin@admin.com",
+      senha: "admin1",
+      nome: "Administrador"
+    });
+    localStorage.setItem("usuarios", JSON.stringify(usuarios));
+  }
+}
+
+criarAdmin();
